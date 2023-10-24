@@ -29,7 +29,7 @@ jobs:
     - name: Check Quality Gate
       run: |
         sleep 20
-        QUALITY_GATE_STATUS=$(curl -s -u "${{ secrets.SONAR_TOKEN }}:" "https://your.sonarqube.instance/api/qualitygates/project_status?projectKey=scva_basic-flask-app-docker" | jq -r .projectStatus.status)
+        QUALITY_GATE_STATUS=$(curl -s -u "${{ secrets.SONAR_TOKEN }}:" "https://sonarcloud.io/api/qualitygates/project_status?projectKey=scva_basic-flask-app-docker" | jq -r .projectStatus.status)
         if [ "$QUALITY_GATE_STATUS" != "OK" ]; then
           echo "Quality Gate failed!"
           exit 1
