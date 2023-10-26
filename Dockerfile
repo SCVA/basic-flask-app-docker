@@ -1,5 +1,5 @@
 # Utiliza la imagen base oficial de Python para Flask
-FROM python:3.8
+FROM python:3.13-rc-slim
 
 # Establece el directorio de trabajo en /app
 WORKDIR /app
